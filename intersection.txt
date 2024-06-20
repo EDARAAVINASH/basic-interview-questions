@@ -1,0 +1,36 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int a[]={1,2,2,2,3,4,4,5,6};
+        int b[]={2,2,4,5,5,6,6,6,7,9};
+        ArrayList<Integer> l=union(a,b);
+        for(int i:l)
+        {
+            System.out.println(i+" ");
+        }
+    }
+    public static ArrayList<Integer> union(int[] a,int[] b)
+    {
+        ArrayList<Integer> h=new ArrayList();
+        int i=0,j=0;
+        while(i<a.length && j<b.length)
+        {
+            if(a[i]==b[j] && !h.contains(a[i]))
+            {
+                h.add(a[i]);
+                i++;j++;
+            }
+            else if(a[i]>b[j])
+            {
+                j++;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        return h;
+    }
+}
