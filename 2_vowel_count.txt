@@ -1,0 +1,18 @@
+import java.util.*;
+import java.util.regex.*;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scan=new Scanner(System.in);
+        int c=0;
+        String s=scan.nextLine();
+        Pattern p=Pattern.compile("[aeiouAEIOU]");
+        Matcher m=p.matcher(s);
+        while(m.find())
+        {
+            c++;
+        }
+        System.out.println(c);
+    }
+}
